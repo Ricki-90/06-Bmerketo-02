@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-_06_Bmerketo-209820be-93b1-4e57-b24e-97212e7f0c85</UserSecretsId>
+    <RootNamespace>_06_Bmerketo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Items\Itemimage\**" />
+    <Compile Remove="Items\ViewModels\**" />
+    <Content Remove="Items\Itemimage\**" />
+    <Content Remove="Items\ViewModels\**" />
+    <EmbeddedResource Remove="Items\Itemimage\**" />
+    <EmbeddedResource Remove="Items\ViewModels\**" />
+    <None Remove="Items\Itemimage\**" />
+    <None Remove="Items\ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Berrr\Desktop\P-Bmerketo\06-Bmerketo\06-Bmerketo\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Berrr\Desktop\P-Bmerketo\06-Bmerketo\06-Bmerketo\.editorconfig" />
+    <None Include="wwwroot\Images\Placeholders\120x113.svg" />
+    <None Include="wwwroot\Images\Placeholders\1920x300.svg" />
+    <None Include="wwwroot\Images\Placeholders\200x122.svg" />
+    <None Include="wwwroot\Images\Placeholders\270x295.svg" />
+    <None Include="wwwroot\Images\Placeholders\369x310.svg" />
+    <None Include="wwwroot\Images\Placeholders\370x295.svg" />
+    <None Include="wwwroot\Images\Placeholders\469x356.svg" />
+    <None Include="wwwroot\Images\Placeholders\501x430.svg" />
+    <None Include="wwwroot\Images\Placeholders\625x647.svg" />
+    <None Include="wwwroot\Images\Placeholders\Logo.svg" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using _06_Bmerketo.Accounts.Models.Identity;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using _06_Bmerketo.Accounts.ViewModels;
+@using _06_Bmerketo.Accounts.Models.UserEntities;
+@using _06_Bmerketo.Accounts.Helpers.Services;
+@using _06_Bmerketo.Items.Helpers.Repositories;
+@using _06_Bmerketo.Constructs.ViewModel;
+
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> userInManager

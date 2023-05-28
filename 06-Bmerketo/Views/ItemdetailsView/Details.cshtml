@@ -1,0 +1,33 @@
+﻿@model int
+@inject ItemRepository itemRepo
+
+@{
+	var item = await itemRepo.GetAsync(x => x.Id == Model);
+}
+
+<div class="margin-bar-bottom-500 container-sm">
+	<div class="justify-content-center align-items-center d-flex">
+		<div class="margin-bar-top-300">
+			@if (item != null)
+			{
+				<div class="container">
+					<img src="@item.ImageName="Image" />
+					<h2>@item.Title</h2>
+					<h3><span>Pris: </span>@item.Price Kronor</h3>
+					<div>
+						@foreach (var tag in item.ItemTags)
+						{
+							<span class="me-2"><span>Higlight: </span>@tag.Tag.TagName</span>
+						}
+					</div>
+					<div class="mb-3">Description:</div>
+					<div>@item.Description</div>
+				</div>
+			}
+			else
+			{
+				<p>Inget föremål hittades</p>
+			}
+		</div>
+	</div>
+</div>

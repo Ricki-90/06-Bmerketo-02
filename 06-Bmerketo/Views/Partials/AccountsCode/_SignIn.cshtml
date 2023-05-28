@@ -1,0 +1,30 @@
+﻿@model UserSignInViewModel
+@{
+    ViewData["Title"] = "Login to your Account";
+}
+
+<div class="margin-bar-bottom-500 container">
+    <div class="justify-content-center align-items-center d-flex">
+        <form method="post" class="col-10 col-xl-6 margin-bar-top-300" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <h1 class="fs-5">Please Login to Your Account</h1>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email*</label>
+                <input asp-for="Email" type="email" class="form-control" onkeyup="validateEmail(event)" />
+                <small class="text-danger"><span asp-validation-for="Email"></span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password*</label>
+                <input asp-for="Password" type="password" class="form-control" onkeyup="validatePassword(event)" />
+                <small class="text-danger"><span asp-validation-for="Password"></span></small>
+            </div>
+            <a class="link" asp-controller="SignUpView" asp-action="SignUp">Don't have an Account yet?</a>
+            <div class="mt-5">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">SIGN IN</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

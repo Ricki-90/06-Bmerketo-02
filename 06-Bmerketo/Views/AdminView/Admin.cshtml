@@ -1,0 +1,57 @@
+﻿@using _06_Bmerketo.Items.Models.ItemsEntites;
+@inject UserAdminService userAdminService
+@model ItemEntity
+
+@{
+	ViewData["Title"] = "Backoffice";
+}
+
+<div class="margin-bar-bottom-500 container">
+    <div class="justify-content-center align-items-center d-flex">
+        <div class="margin-bar-top-300 d-flex justify-content-between">
+            <div class="mx-5">
+                <h2>List of Users and Roles</h2>
+                @foreach (var user in await userAdminService.GetUsersAsync())
+                {
+                    <div class="mb-5">
+                        <div>
+                            @user.Email
+                            (
+                            @foreach (var roleName in user.RoleNames)
+                            {
+                                <span>@roleName</span>
+                            }
+                            )
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="mx-5">
+                <h2>Create item to database</h2>
+                @using (Html.BeginForm("SaveImage", "AdminView", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <span>Title</span>
+                    @Html.TextBoxFor(m => m.Title)
+                    <br />
+
+                    <span>Description</span>
+                    @Html.TextBoxFor(m => m.Description)
+                    <br />
+
+                    <span>ImageUrl</span>
+                    @Html.TextBoxFor(m => m.ImageUrl)
+                    <br />
+
+                    <span>Price</span>
+                    @Html.TextBoxFor(m => m.Price)
+                    <br />
+
+                    <input type="file" name="imageFile" />
+                    <br />
+
+                    <input type="submit" value="Upload" />
+                }
+            </div>
+        </div>
+    </div>
+</div>

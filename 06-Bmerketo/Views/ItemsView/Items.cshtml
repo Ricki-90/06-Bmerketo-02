@@ -1,0 +1,18 @@
+﻿@inject ItemRepository itemRepo
+
+<div class="margin-bar-bottom-500 container">
+	<div class="justify-content-center align-items-center d-flex">
+		<div class="margin-bar-top-300">
+			<h1>List of all items in store</h1>
+			<h4>Click on item link for more detials</h4>
+		<div>
+		@foreach(var item in await itemRepo.GetAllAsync())
+			{
+			<div>
+				<div><a asp-controller="ItemdetailsView" asp-action="details" asp-route-Id="@item.Id">@item.Title</a></div>
+			</div>
+			}
+		</div>
+		</div>
+	</div>
+</div>

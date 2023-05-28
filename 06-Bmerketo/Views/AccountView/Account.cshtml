@@ -1,0 +1,14 @@
+﻿@{
+	ViewData["Title"] = User.FindFirst("DisplayName")?.Value;
+}
+
+<div class="margin-bar-bottom-500 container">
+    <div class="justify-content-center align-items-center d-flex">
+		<div class="margin-bar-top-300">
+			@ViewData["Title"]
+		</div>
+		<h1 class="">Welcome to your accountpage</h1>
+    </div>
+</div>
+
+
