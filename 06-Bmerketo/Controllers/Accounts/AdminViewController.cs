@@ -25,6 +25,8 @@ namespace _06_Bmerketo.Controllers.Accounts
             return View();
         }
 
+
+        //Code below that make upload image dont work.
         [HttpPost]
         public async Task<IActionResult> SaveImage(ItemEntity item, IFormFile imageFile)
         {
